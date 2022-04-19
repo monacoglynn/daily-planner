@@ -5,13 +5,15 @@ var currentDay = $('#currentDay');
 
 // add time function to jumbotron
 function updateTime() {
+    /* By declaring the variable inside the function, it allows for the time to be updated every second. 
+    With the variable declared outside the function, it would always remain the time as when the page was loaded. */
     var time = moment().format('MMM Do YYYY, hh:mm:ss:a');
     $(currentDay).text(time);
 }
+// this runs the updateTime function every second
 setInterval(updateTime, 1000);
 // when page loads, display planner.
 
-// display each hour row
 
 // add functionality for changing the color of the row depending on the time of day.
 
