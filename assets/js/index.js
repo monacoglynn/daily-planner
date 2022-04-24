@@ -65,6 +65,8 @@ function changeColor() {
 setInterval(changeColor, 1000);
 
 // here I are the listeners for each save button to save the text to localStorage
+
+
 saves[0].on('click', function () {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText0', JSON.stringify(textInput[0].val()));
