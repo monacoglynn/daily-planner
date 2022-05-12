@@ -1,29 +1,28 @@
 // set all my variables
-var mainContainer = $('.container');
-var jumbotron = $('.jumbotron');
-var currentDay = $('#currentDay');
-var divContainer = $('.container');
-var timeBlock = divContainer.children('section');
+const mainContainer = $('.container');
+const jumbotron = $('.jumbotron');
+const currentDay = $('#currentDay');
+const divContainer = $('.container');
+const timeBlock = divContainer.children('section');
 // Selects the save buttons
-var saves = [$('.9Save'), $('.10Save'), $('.11Save'), $('.12Save'), $('.13Save'), $('.14Save'), $('.15Save'), $('.16Save'), $('.17Save')]
+const saves = [$('.9Save'), $('.10Save'), $('.11Save'), $('.12Save'), $('.13Save'), $('.14Save'), $('.15Save'), $('.16Save'), $('.17Save')]
 // selects the textarea elements
-var textInput = [$('#9'), $('#10'), $('#11'), $('#12'), $('#13'), $('#14'), $('#15'), $('#16'), $('#17')]
+const textInput = [$('#9'), $('#10'), $('#11'), $('#12'), $('#13'), $('#14'), $('#15'), $('#16'), $('#17')]
 
 // add time function to jumbotron
 function updateTime() {
     /* By declaring the variable inside the function, it allows for the time to be updated every second. 
     With the variable declared outside the function, it would always remain the time as when the page was loaded. */
-    var time = moment().format('MMM Do YYYY, hh:mm:ss a');
+    let time = moment().format('MMM Do YYYY, hh:mm:ss a');
     currentDay.text(time);
 }
 
 // add function to pull saved text from localStorage
 
 function init() {
-    var oneSavedText;
-    for (var i = 0; i < saves.length; i++) {
-        var savedText;
-        var oneSavedNote = JSON.parse(localStorage.getItem(`savedText${i}`));
+    for (let i = 0; i < saves.length; i++) {
+        // let savedText;
+        let oneSavedNote = JSON.parse(localStorage.getItem(`savedText${i}`));
         // if there isn't any thing in local storage
         if (oneSavedNote == null) {
             console.log(i + ' memory is empty')
@@ -67,45 +66,46 @@ setInterval(changeColor, 1000);
 // here I are the listeners for each save button to save the text to localStorage
 
 
-saves[0].on('click', function () {
+
+saves[0].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText0', JSON.stringify(textInput[0].val()));
 });
-saves[1].on('click', function () {
+saves[1].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText1', JSON.stringify(textInput[1].val()));
 });
 
-saves[2].on('click', function () {
+saves[2].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText2', JSON.stringify(textInput[2].val()));
 });
 
-saves[3].on('click', function () {
+saves[3].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText3', JSON.stringify(textInput[3].val()));
 });
 
-saves[4].on('click', function () {
+saves[4].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText4', JSON.stringify(textInput[4].val()));
 });
 
-saves[5].on('click', function () {
+saves[5].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText5', JSON.stringify(textInput[5].val()));
 });
-saves[6].on('click', function () {
+saves[6].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText6', JSON.stringify(textInput[6].val()));
 });
 
-saves[7].on('click', function () {
+saves[7].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText7', JSON.stringify(textInput[7].val()));
 });
 
-saves[8].on('click', function () {
+saves[8].on('click', () => {
     console.log('YOU CLICKED ON ME');
     localStorage.setItem('savedText8', JSON.stringify(textInput[8].val()));
 });
