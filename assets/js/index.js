@@ -38,9 +38,9 @@ setInterval(updateTime, 1000);
 
 // add functionality for changing the color of the row depending on the time of day.
 function changeColor() {
-    var currentTime = moment().hour();
-    for (var i = 9; i <= 17; i++) {
-        var timeBlock = $('#' + i);
+    let currentTime = moment().hour();
+    for (let i = 9; i <= 17; i++) {
+        let timeBlock = $('#' + i);
         if (currentTime > i) {
             // if the current time is more than the index, the timeblock will be set to past
             timeBlock.addClass('past');
